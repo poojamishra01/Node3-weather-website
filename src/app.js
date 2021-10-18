@@ -1,9 +1,11 @@
 const path=require('path')
 const express=require('express')
-const app=express()//express application
 const hbs=require('hbs')//for partials
 const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
+
+const app=express()//express application
+const port=process.env.PORT || 3000
 //for serving a directory ,it configures our express application
 //define path for express config
 const publicdirectorypath=path.join(__dirname,'../public')
@@ -81,6 +83,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log("server up")
+app.listen(port,()=>{
+    console.log("server up on port: "+port )
 })
