@@ -57,8 +57,8 @@ app.get('/weather',(req,res)=>{
             {
             return res.send({error})
             }
-            const {weather,temperature,feelslike}=forecastdata
-            const forecast=weather+'. Temperature is '+temperature+' but it feels like '+feelslike+'.'
+            const {weather,temperature,feelslike,humidity}=forecastdata
+            const forecast=weather+'. Temperature is '+temperature+' but it feels like '+feelslike+'. Humidity is '+humidity+'%.' 
             res.send({
                 forecast,
                 location,
